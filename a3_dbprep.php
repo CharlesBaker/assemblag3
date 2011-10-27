@@ -33,12 +33,12 @@
 	if (!$dbh) {
 		die("Unable to select MySQL database properly: " . mysql_error());
 	} 
-	echo "Selected database successfully! (" . $database . ")";
+	echo "Selected database successfully! (" . $database . ")<br />\n";
 	
 	// Now that we've selected the database we're going to construct tables in, let's START CONSTRUCTING QUERIES.
 	$query_createposts = "CREATE TABLE a3_posts
 	(
-	id int NOT NULL AUTO_INCREMENT,
+	id int PRIMARY KEY NOT NULL AUTO_INCREMENT,
 	post_author bigint(20),
 	post_title text,
 	post_content longtext,
@@ -55,7 +55,7 @@
 	
 	$query_createcat = "CREATE TABLE a3_categories
 	(
-	id int NOT NULL AUTO_INCREMENT
+	id int PRIMARY KEY NOT NULL AUTO_INCREMENT,
 	cat_name text,
 	cat_parent int
 	)";
