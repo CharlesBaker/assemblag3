@@ -39,5 +39,38 @@
 	$query_createposts = "CREATE TABLE a3_posts
 	(
 	id int NOT NULL AUTO_INCREMENT,
-	 
+	post_author bigint(20),
+	post_title text,
+	post_content longtext,
+	post_excerpt text,
+	post_date datetime,
+	post_date_gmt datetime,
+	post_comment_status int,
+	post_comment_count bigint(20),
+	post_mod datetime,
+	post_mod_gmt datetime,
+	post_categories text,
+	post_image bigint(20)
+	)";
+	
+	$query_createcat = "CREATE TABLE a3_categories
+	(
+	id int NOT NULL AUTO_INCREMENT
+	cat_name text,
+	cat_parent int
+	)";
+	
+	// Now that we've constructed our table queries, let's execute them.
+	$qpost = @mysql_query($query_createposts,$dbc);
+	if (!$qpost) {
+		die("Unable to create posts table in target database: " . mysql_error());
+	}
+	echo "Posts table created in target database!<br />\nAttempting to create category table!<br />\n";
+	
+	$qpost = @mysql_query($query_createcat,$dbc);
+	if (!$qpost) {
+		die("Unable to create category table in target database: " . mysql_error());
+	}
+	echo "Category table created in target database!<br />\n";
+	
 ?>
