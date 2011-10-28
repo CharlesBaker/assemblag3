@@ -1,13 +1,13 @@
 <?php
 
-/*
- * 
- *   Filename:	a3_dbprep.php
- *   Purpose:	Just a temporary script to prepare database usage for assemblag3 development.
- *   Author:	Charles "MisutoWolf" Baker
- *   Date:		October 26, 2011
- * 
- */
+	/*
+	 * 
+	 *   Filename:	a3_dbprep.php
+	 *   Purpose:	Just a temporary script to prepare database usage for assemblag3 development.
+	 *   Author:	Charles "MisutoWolf" Baker
+	 *   Date:		October 26, 2011
+	 * 
+	 */
 
 
 	// First, we set the variables needed to connect to the SQL server.
